@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 // 할 일 목록 관리
-class TodoList {
-    private ArrayList<TodoItem> todoItems;
+public class TodoList {
+    private final ArrayList<TodoItem> todoItems;
     private int counter;
 
     public TodoList() {
@@ -11,16 +11,14 @@ class TodoList {
     }
 
     public void addTask(String task) {
-        TodoItem newItem = new TodoItem(counter, task);
+        TodoItem newItem = new TodoItem(counter++, task);
         todoItems.add(newItem);
-        counter++;
         System.out.println(ConsoleColor.GREEN + "✔ 할 일이 추가되었습니다: " + task + ConsoleColor.RESET);
     }
 
     public void addTaskWithDeadline(String task, String dueDate) {
-        DeadlineTodoItem newItem = new DeadlineTodoItem(counter, task, dueDate);
+        DeadlineTodoItem newItem = new DeadlineTodoItem(counter++, task, dueDate);
         todoItems.add(newItem);
-        counter++;
         System.out.println(ConsoleColor.GREEN + "✔ 마감 기한이 있는 할 일이 추가되었습니다: " + task + " (마감일: " + dueDate + ")" + ConsoleColor.RESET);
     }
 
@@ -50,7 +48,10 @@ class TodoList {
     }
 
     public void deleteTask(int taskId) {
-        todoItems.removeIf(item -> item.getId() == taskId);
-        System.out.println(ConsoleColor.RED + "❌ 할 일이 삭제되었습니다: " + taskId + ConsoleColor.RESET);
+        if (todoItems.removeIf(item -> item.getId() == taskId)) {
+            System.out.println(ConsoleColor.RED + "❌ 할 일이 삭제되었습니다: " + taskId + ConsoleColor.RESET);
+        } else {
+            System.out.println(ConsoleColor.RED + "🚫 해당 번호의 할 일을 찾을 수 없습니다." + ConsoleColor.RESET);
+        }
     }
 }

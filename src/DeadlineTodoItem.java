@@ -1,6 +1,6 @@
 // 2차 상속: 마감 기한이 있는 할 일
-class DeadlineTodoItem extends TodoItem {
-    private String dueDate;
+public class DeadlineTodoItem extends TodoItem {
+    private final String dueDate;
 
     public DeadlineTodoItem(int id, String task, String dueDate) {
         super(id, task);

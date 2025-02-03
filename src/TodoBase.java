@@ -1,6 +1,7 @@
-class TodoBase {
-    protected int id;
-    protected String task;
+// 기본 할 일 (상위 클래스)
+public class TodoBase {
+    private final int id;
+    private final String task;
 
     public TodoBase(int id, String task) {
         this.id = id;
