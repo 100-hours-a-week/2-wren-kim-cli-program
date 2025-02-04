@@ -1,5 +1,5 @@
 // 기본 할 일 (상위 클래스)
-public class TodoBase {
+public abstract class TodoBase {
     private final int id;
     private final String task;
 
