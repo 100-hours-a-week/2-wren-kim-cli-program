@@ -15,4 +15,7 @@ public abstract class TodoBase {
     public String getTask() {
         return task;
     }
+
+    public abstract String toString();
+    public abstract void markDone();
 }
