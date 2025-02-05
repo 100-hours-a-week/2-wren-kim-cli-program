@@ -1,3 +1,5 @@
+package util;
+
 public class ConsoleColor {
     public static final String RESET = "\u001B[0m";    // 기본 색상
     public static final String GREEN = "\u001B[32m";   // 초록색 (완료)

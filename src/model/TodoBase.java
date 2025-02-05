@@ -1,3 +1,5 @@
+package model;
+
 // 기본 할 일 (상위 클래스)
 public abstract class TodoBase {
     private final int id;

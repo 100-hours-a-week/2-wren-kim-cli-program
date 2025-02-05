@@ -1,3 +1,7 @@
+package model;
+
+import util.ConsoleColor;
+
 // 1차 상속: 기본 할 일
 public class TodoItem extends TodoBase {
     private boolean isDone;

@@ -1,3 +1,5 @@
+package util;
+
 public class Messages {
     public static final String MENU = "\n========= TODO LIST =========\n 1. 할 일 추가\n 2. 마감 기한 할 일 추가\n 3. 할 일 목록 보기\n 4. 할 일 완료 체크\n 5. 할 일 삭제\n 6. 종료\n=============================";
     public static final String INPUT_PROMPT = " 선택 >> ";
